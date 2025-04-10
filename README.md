@@ -194,3 +194,57 @@ The client lacks automated, reusable infrastructure modules and a secure cloud p
 * **Task:** Provide contact information for ongoing support and maintenance.
 * **Task:** Obtain formal sign-off from the client upon successful handover.
 
+
+## 🗂️ Terraform Project Directory Structure
+ 
+ Your code base should have this structure 
+
+``` 
+terraform-infra/
+├── environments/
+│   ├── dev/
+│   │   ├── backend.tf
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── providers.tf
+│   │   └── terraform.tfvars
+│   ├── staging/
+│   └── prod/
+│
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   │   └── README.md
+│   ├── eks/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   │   └── README.md
+│   ├── ec2/
+│   ├── rds/
+│   ├── s3/
+│   ├── iam/
+│   ├── kms/
+│   ├── monitoring/
+│   │   ├── prometheus.tf
+│   │   ├── grafana.tf
+│   └── security/
+│       ├── aws_config.tf
+│       ├── security_group.tf
+│       └── config_rules.tf
+│
+├── shared/
+│   └── providers.tf
+│
+├── scripts/
+│   ├── bootstrap.sh
+│   ├── deploy.sh
+│   └── destroy.sh
+│
+├── .gitignore
+├── README.md
+└── terragrunt.hcl (optional)
+```
+---
