@@ -193,3 +193,4 @@ The client lacks automated, reusable infrastructure modules and a secure cloud p
 * **Task:** Conduct knowledge transfer sessions with the client's technical team, covering the infrastructure architecture, Terraform modules, CI/CD pipeline, monitoring setup, and operational procedures.
 * **Task:** Provide contact information for ongoing support and maintenance.
 * **Task:** Obtain formal sign-off from the client upon successful handover.
+
