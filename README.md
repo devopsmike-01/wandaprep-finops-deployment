@@ -1,6 +1,7 @@
 
 # 🚨 Problem Statement 
 **_[Current Project Mike is working on ~ Interview use case]_**
+
 A FinOps-focused client managing multiple financial applications on AWS requires a robust, scalable, and secure infrastructure automation framework. Manual provisioning was error-prone, inconsistent, and slow. The client needs reusable Terraform modules for backend and frontend application deployment, alongside a defined security posture including IAM hardening, VPC controls, and guardrails.
 The client lacks automated, reusable infrastructure modules and a secure cloud posture for deploying both frontend (Kubernetes) and backend (EC2) workloads on AWS. Manual provisioning and inconsistent environments are leading to cost inefficiencies and security risks.
 
