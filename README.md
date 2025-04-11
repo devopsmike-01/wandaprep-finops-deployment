@@ -194,10 +194,59 @@ The client lacks automated, reusable infrastructure modules and a secure cloud p
 * **Task:** Provide contact information for ongoing support and maintenance.
 * **Task:** Obtain formal sign-off from the client upon successful handover.
 
+## 🌱 GitHub Project Branching Strategy
+
+Here is a high level proposed architecture blue print for the complete remediation solution:
+
+![Wandaprep-finops-blueprint](wandaprep-finops-blueprint.png)
+
+
+## 🌱 GitHub Project Branching Strategy
+ 
+ Your github repo for the project should have this structure:
+
+```
+main            # Production-ready code
+dev             # Integration branch for tested features
+feature/*       # Individual feature work (e.g., feature/eks-frontend)
+bugfix/*        # Bug-specific branches
+hotfix/*        # Critical patches to production
+release/*       # Pre-release staging
+
+```
+
+* Feature Branches → Merged into env branch
+
+* Environment Branches → Merged into main for production release
+
+* PRs require terraform plan to pass before merge
+
+For all the environment, it should look like this
+
+```
+main
+│
+├── dev
+│   └── feature/dev-setup-vpc
+│   └── feature/dev-monitoring
+│
+├── staging
+│   └── feature/staging-rds
+│
+└── prod
+    └── hotfix/prod-rds-patch
+```
+
+
+
 
 ## 🗂️ Terraform Project Directory Structure
  
- Your code base should have this structure 
+Here is an architectural layout of the infra to be deployed on Amazon Web Service cloud
+
+ ![Wandaprep-finops-aws-architecture](wandaprep-finops-aws-blueprint.png)
+
+ Your code base should have this structure. The project emphasizes reusable modules for frontend (EKS) and backend (EC2) application deployments on AWS, with a focus on automation and security. 
 
 ``` 
 terraform-infra/
@@ -248,3 +297,40 @@ terraform-infra/
 └── terragrunt.hcl (optional)
 ```
 ---
+
+## 🔧 CI/CD Folder Structure (Optional)
+You can define a clean `ci-cd` folder layout:
+
+```
+.github/
+ └── workflows/
+      └── terraform.yml
+ci-cd/
+ └── scripts/
+      └── notify-slack.sh
+      └── backend.tf.template
+```
+
+## ✅ CI/CD Folder Structure (Optional)
+
+You can define a clean `ci-cd` folder layout:
+
+* S3 for state storage
+
+* DynamoDB for state locking
+
+* Single AWS Account, Multiple Workspaces (dev, staging, prod)
+
+* Modules are reusable across environments
+
+* CI/CD via GitHub Actions
+
+* Slack integration for job updates 
+
+## ✅ Slack Notification Setup
+
+This integration includes:
+
+* Script to post to Slack Webhook
+
+* Secrets setup guide for GitHub (`SLACK_WEBHOOK`, `AWS_ACCESS_KEY_ID`, etc.)
