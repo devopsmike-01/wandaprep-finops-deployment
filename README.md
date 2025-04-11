@@ -194,7 +194,7 @@ The client lacks automated, reusable infrastructure modules and a secure cloud p
 * **Task:** Provide contact information for ongoing support and maintenance.
 * **Task:** Obtain formal sign-off from the client upon successful handover.
 
-## 🌱 GitHub Project Branching Strategy
+## 🌱 Solution Architecture
 
 Here is a high level proposed architecture blue print for the complete remediation solution:
 
