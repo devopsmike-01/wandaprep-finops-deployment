@@ -311,9 +311,9 @@ ci-cd/
       └── backend.tf.template
 ```
 
-## ✅ CI/CD Folder Structure (Optional)
+## ✅ Terraform Remote Backend Setup
 
-You can define a clean `ci-cd` folder layout:
+**Assumptions**
 
 * S3 for state storage
 
